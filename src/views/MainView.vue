@@ -42,6 +42,7 @@ async function getCurrencies(){
 }
 
 async function recalculate(code, value){
+  if (!value) value = 0
   try{
     const response = await fetch(API_URL + "/recalculate", {
       method: "POST",
@@ -56,13 +57,15 @@ async function recalculate(code, value){
 
     const data = await response.json();
     if(data.message) {
-      window.alert(data.message)
+      console.log(data.message)
     } else {
       currencies.value = data
       active.value = active.value.map(item => {
         const foundCurrency = currencies.value.find(currency => currency.code === item.code);
         return foundCurrency ? foundCurrency : item;
       });
+
+      active.value.find(currency=> currency.code === code).value = value;
     }
   } catch (error){
     console.error('Error while recalculating, check connection. ' + error)
@@ -81,14 +84,14 @@ async function recalculate(code, value){
       <div class="element" v-for="currency in active" :key="currency.code">
         <p>{{currency.code}}</p>
         <input type="number" :value="currency.value" :id="currency.code"
-               @change = "recalculate(currency.code, $event.target.value)"/>
+               @input = "recalculate(currency.code, $event.target.value)"/>
         <p>{{currency.name}}</p>
       </div>
     </section>
     <aside>
       <label class="currency-list" v-for="currency in currencies" :key="currency.code">
         <input type="checkbox" :id="currency.code" :value="currency"
-               v-model="active" >
+               v-model="active">
         {{currency.code}}
       </label>
     </aside>
@@ -99,5 +102,28 @@ async function recalculate(code, value){
 </template>
 
 <style scoped>
+label:hover {
+  font-weight: bold;
+  border-bottom: 1px solid white;
+}
 
+@media (max-width: 500px) {
+  main {
+    flex-direction: column-reverse;
+  }
+  section{
+    padding: 2% 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    float: right;
+  }
+  aside {
+    width: 100%;
+    float: left;
+    min-height: auto;
+    height: auto;
+    text-align: center;
+  }
+}
 </style>
