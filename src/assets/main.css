@@ -1,35 +1,76 @@
-@import './base.css';
-
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(114,200,239,.27)
+}
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+    width: 100%;
+    height: 100%;
 }
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+header{
+    background: cyan;
+    margin: 0;
+    min-height: 8vh;
 }
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+header h1 {
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    color: white;
 }
-
-@media (min-width: 1024px) {
-  body {
+main {
+    width: 100%;
+    height: 100%;
     display: flex;
-    place-items: center;
-  }
-
-  #app {
+}
+section {
+    padding: 2% 1%;
+    width: 90%;
+    height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+    grid-template-columns: repeat(4, 1fr);
+    float: left;
+}
+aside {
+    width: 10%;
+    float: left;
+    background: cyan;
+    min-height: 92vh;
+}
+.element {
+    border: 3px solid purple;
+    border-radius: 25px;
+    margin: 0 2% 2%;
+    height: 13vh;
+    text-align: center;
+}
+.element p{
+    margin: 0;
+    color: purple;
+}
+.element p:first-of-type {
+    font-weight: bold;
+    height: 30%;
+    padding-top: 2%;
+}
+.element input {
+    height: 20%;
+    width: 90%;
+    margin-bottom: 2%;
+    border: none;
+    border-bottom: 2px solid purple;
+    border-radius: 10px;
+}
+.element input:focus{
+    border: none;
+    border-bottom: 4px solid purple;
+}
+.currency-list {
+    font-size: large;
+    display: block;
+    width: 90%;
+    margin: 2% auto;
+    color: purple;
 }

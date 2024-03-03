@@ -32,3 +32,4 @@ coverage
 .env
 .eslintrc.cjs
 .node/
+.prettierrc.json
