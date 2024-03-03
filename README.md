@@ -1,29 +1,46 @@
-# frontend
+# ConverterFrontend, SOFTTECO Task
+***
+Frontend for currency converter created in Vue.js
 
-This template should help get you started developing with Vue 3 in Vite.
+## Description
+***
+Created basic currency converter application frontend.
 
-## Recommended IDE Setup
+## Technologies used
+***
+To create backend, I used:
+* git
+* HTML
+* CSS
+* Express.js
+* Mongoose
+* NoSQL (MongoDB)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+# Screenshots gallery
+***
 
-## Customize configuration
+## You can decide which currencies are visible using right side of the page.
+***
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+![main.png](main.png)
+```
+Using checkbox select which currencies you want to see on your screen. After adding new currency - it's added with recalucalted value!
 ```
 
-### Compile and Hot-Reload for Development
+## There's also responsive mobile version of the site
+***
 
-```sh
-npm run dev
+![mobile.png](mobile.png)
+
+```
+It's only a fragment of whole site and it's fully scrollable.
 ```
 
-### Compile and Minify for Production
+## All data are fetched from server in real-time
+***
 
-```sh
-npm run build
+![real-time.png](real-time.png)
+
+```
+You don't have to click outside the input filed or accept it using some kind of button - just type the amount! 
 ```
