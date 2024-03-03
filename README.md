@@ -12,9 +12,8 @@ To create backend, I used:
 * git
 * HTML
 * CSS
-* Express.js
-* Mongoose
-* NoSQL (MongoDB)
+* Vue.js
+* Vite
 
 # Screenshots gallery
 ***
